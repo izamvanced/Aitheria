@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aetheria AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/react-quill@2.0.0/dist/quill.snow.css" rel="stylesheet">
+
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #111827;
+        --card: #f9fafb;
+        --accent: #ff8a1f;
+        --subtext: #6b7280;
+        --border: #e5e7eb;
+        --subtle-bg: #f3f4f6;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .dark {
+        --bg: #0d1117;
+        --fg: #e6edf3;
+        --card: #161b22;
+        --accent: #ff8a1f;
+        --subtext: #8b949e;
+        --border: #30363d;
+        --subtle-bg: #1c2128;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--fg);
+      }
+      .ql-toolbar.ql-snow, .ql-container.ql-snow {
+        border-color: var(--border) !important;
+      }
+      .ql-editor {
+        color: var(--fg);
+      }
+       .ql-snow .ql-stroke {
+        stroke: var(--fg);
+      }
+      .ql-snow .ql-picker-label {
+        color: var(--fg);
+      }
+      .ql-snow .ql-fill {
+          fill: var(--fg);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "react-quill": "https://esm.sh/react-quill@^2.0.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
