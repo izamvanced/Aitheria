@@ -3,103 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aitheria — Tools to turn ideas into impact</title>
+  <title>Aitheria — Tools Platform</title>
 
-  <!-- GLOBAL STYLES -->
+  <!-- GLOBAL STYLE -->
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
 
-  <!-- HEADER (FETCHED) -->
+  <!-- HEADER -->
   <div id="header"></div>
 
   <!-- MAIN CONTENT -->
   <main class="container">
 
-    <!-- HERO -->
     <h1>
       Aitheria <span class="accent">Tools</span>
     </h1>
 
     <p class="tagline">
-      Tools to turn ideas into impact.
+      Platform tools AI untuk edukasi, visual produk, dan eksperimen kreatif.
     </p>
-
-    <!-- HERO SEARCH -->
-    <div style="margin:28px auto 48px; max-width:520px;">
-      <input
-        type="text"
-        placeholder="Search tools…"
-        style="
-          width:100%;
-          padding:14px 18px;
-          font-size:15px;
-          border-radius:14px;
-          border:1px solid var(--border-soft);
-          background:var(--bg-soft);
-          color:var(--ink-main);
-          outline:none;
-        "
-        onfocus="this.style.borderColor='var(--accent)'; this.style.boxShadow='0 0 0 3px rgba(255,138,31,.18)'"
-        onblur="this.style.borderColor='var(--border-soft)'; this.style.boxShadow='none'"
-      />
-    </div>
 
     <!-- CATEGORY: EDUCATION -->
     <div class="card">
       <h3>Education Tools</h3>
       <p>
-        Tools AI untuk edukasi, pembelajaran, dan konten berbasis visual.
-        Cocok untuk guru, orang tua, dan kreator edukasi.
+        Tools AI untuk membuat soal, materi belajar, dan konten edukasi
+        berbasis visual dan narasi.
       </p>
       <a href="./education/" class="button">
-        View tools
+        Lihat tools
       </a>
     </div>
 
-    <!-- CATEGORY: COMMERCE / VISUAL -->
+    <!-- CATEGORY: PRODUCT VISUAL -->
     <div class="card">
-      <h3>Commerce & Product Visuals</h3>
+      <h3>Product & Visual Tools</h3>
       <p>
-        Tools untuk UMKM, seller, dan brand agar visual produk terlihat
-        profesional, estetik, dan siap jual tanpa photoshoot fisik.
+        Tools untuk UMKM dan brand agar visual produk terlihat profesional
+        tanpa photoshoot fisik.
       </p>
       <a href="./product-visuals/" class="button">
-        View tools
+        Lihat tools
       </a>
     </div>
 
-    <!-- CATEGORY: PERSONAL STYLING -->
+    <!-- CATEGORY: STYLING -->
     <div class="card">
       <h3>Personal Styling Tools</h3>
       <p>
-        Eksperimen AI untuk personal appearance seperti outfit,
-        gaya rambut, dan hijab secara virtual.
+        Eksperimen AI untuk outfit, gaya rambut, dan hijab secara virtual.
       </p>
       <a href="./styling/" class="button">
-        View tools
+        Lihat tools
       </a>
     </div>
 
   </main>
 
-  <!-- FOOTER (FETCHED) -->
+  <!-- FOOTER -->
   <div id="footer"></div>
 
-  <!-- FETCH HEADER & FOOTER -->
+  <!-- FETCH PARTIALS -->
   <script>
-    fetch('./header.html')
+    fetch('./partials/header.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('header').innerHTML = html;
+        bindBackButton(); // bind SETELAH header masuk
       });
 
-    fetch('./footer.html')
+    fetch('./partials/footer.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('footer').innerHTML = html;
       });
+
+    function bindBackButton(){
+      const backBtn = document.getElementById('btn-back');
+      if (!backBtn) return;
+
+      backBtn.onclick = () => {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = '/aitheria/';
+        }
+      };
+    }
   </script>
 
 </body>
