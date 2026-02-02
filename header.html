@@ -47,6 +47,7 @@ header{
   padding:14px 20px;
   display:flex;
   align-items:center;
+  justify-content:space-between;
   gap:14px;
 }
 
@@ -60,31 +61,6 @@ header{
 .nav-left a{
   font-size:14px;
   color:var(--ink-sub);
-}
-
-/* SEARCH */
-.search-box{
-  flex:1;
-}
-
-.search-box input{
-  width:100%;
-  padding:10px 14px;
-  border-radius:var(--radius-md);
-  border:1px solid var(--border-soft);
-  font-size:14px;
-  background:var(--bg-soft);
-  color:var(--ink-main);
-}
-
-.search-box input::placeholder{
-  color:var(--ink-sub);
-}
-
-.search-box input:focus{
-  outline:none;
-  border-color:var(--accent);
-  box-shadow:0 0 0 3px rgba(255,138,31,.18);
 }
 
 /* RIGHT NAV */
@@ -114,9 +90,11 @@ header{
 
 /* TITLE */
 h1{
-  font-size:42px;
-  margin:0 0 14px;
-  letter-spacing:.4px;
+  font-size:46px;
+  font-weight:900;
+  letter-spacing:-0.02em;
+  line-height:1.05;
+  margin:0 0 10px;
   position:relative;
 }
 
@@ -132,10 +110,17 @@ h1::after{
 
 .accent{
   color:var(--accent);
-  font-weight:700;
+  font-weight:800;
 }
 
-/* CARD */
+/* TAGLINE */
+.tagline{
+  font-size:16px;
+  color:var(--ink-sub);
+  margin-top:6px;
+}
+
+/* ================= CARD ================= */
 .card{
   position:relative;
   background:var(--bg-soft);
@@ -179,7 +164,7 @@ h1::after{
   line-height:1.6;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .button{
   display:inline-flex;
   align-items:center;
@@ -211,7 +196,7 @@ h1::after{
   color:#ffffff;
 }
 
-/* FOOTER BASE */
+/* ================= FOOTER BASE ================= */
 footer{
   margin-top:80px;
   padding:36px 20px;
@@ -235,11 +220,6 @@ footer{
     <div class="nav-left">
       <a href="#" onclick="goBack(event)">← Back</a>
       <a href="/">Home</a>
-    </div>
-
-    <!-- SEARCH -->
-    <div class="search-box">
-      <input type="text" placeholder="Search tools…" />
     </div>
 
     <!-- RIGHT -->
