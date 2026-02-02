@@ -44,15 +44,36 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:12px;
 }
 
-.header-inner strong{
+/* LEFT NAV */
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.nav-left a{
+  font-size:14px;
+  color:var(--ink-sub);
+}
+
+/* BRAND */
+.brand{
   font-size:20px;
   letter-spacing:.4px;
+  font-weight:600;
+}
+
+/* RIGHT NAV */
+.nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
 }
 
 .nav a{
-  margin-left:18px;
   font-size:14px;
   color:var(--ink-sub);
 }
@@ -62,25 +83,12 @@ header{
   font-weight:600;
 }
 
-/* MAIN */
+/* LAYOUT SHARED */
 .container{
   max-width:760px;
   margin:0 auto;
   padding:64px 20px 40px;
   text-align:center;
-}
-
-h1{
-  font-size:42px;
-  margin:0 0 14px;
-  letter-spacing:.4px;
-}
-
-.container > p{
-  font-size:17px;
-  color:var(--ink-sub);
-  max-width:560px;
-  margin:0 auto 44px;
 }
 
 /* CARD */
@@ -91,30 +99,6 @@ h1{
   box-shadow:var(--shadow-card);
   text-align:left;
   margin-bottom:44px;
-}
-
-.card h3{
-  margin:0 0 22px;
-  font-size:20px;
-}
-
-.tool{
-  padding:14px 0;
-  border-bottom:1px solid var(--border-soft);
-}
-
-.tool:last-child{
-  border-bottom:none;
-}
-
-.tool strong{
-  display:block;
-  font-size:15px;
-}
-
-.tool span{
-  font-size:14px;
-  color:var(--ink-sub);
 }
 
 /* BUTTON */
@@ -155,11 +139,33 @@ footer{
 
 <header>
   <div class="header-inner">
-    <strong>AITHERIA</strong>
-    <nav class="nav">
+
+    <!-- LEFT: BACK + HOME -->
+    <div class="nav-left">
+      <a href="#" onclick="goBack(event)">← Back</a>
       <a href="/">Home</a>
-      <a href="#tools">Tools</a>
+    </div>
+
+    <!-- BRAND -->
+    <div class="brand">AITHERIA</div>
+
+    <!-- RIGHT NAV -->
+    <nav class="nav">
+      <a href="/#tools">Tools</a>
       <a href="https://lynk.id" class="primary">Akses</a>
     </nav>
+
   </div>
 </header>
+
+<script>
+function goBack(e){
+  e.preventDefault();
+
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    window.location.href = '/';
+  }
+}
+</script>
