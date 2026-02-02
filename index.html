@@ -2,21 +2,24 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AITHERIA Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aitheria — Tools to turn ideas into impact</title>
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (FETCHED) -->
   <div id="header"></div>
 
-  <!-- MAIN -->
+  <!-- MAIN CONTENT -->
   <main class="container">
 
     <!-- HERO -->
     <h1>
-      AITHERIA <span class="accent">Tools</span>
+      Aitheria <span class="accent">Tools</span>
     </h1>
 
     <p class="tagline">
@@ -24,7 +27,7 @@
     </p>
 
     <!-- HERO SEARCH -->
-    <div class="hero-search" style="margin:28px auto 48px; max-width:520px;">
+    <div style="margin:28px auto 48px; max-width:520px;">
       <input
         type="text"
         placeholder="Search tools…"
@@ -47,52 +50,52 @@
     <div class="card">
       <h3>Education Tools</h3>
       <p>
-        Kumpulan tools AI untuk membantu pembuatan materi edukasi,
-        soal pembelajaran, dan konten belajar berbasis narasi visual.
+        Tools AI untuk edukasi, pembelajaran, dan konten berbasis visual.
+        Cocok untuk guru, orang tua, dan kreator edukasi.
       </p>
-      <a href="education/index.html" class="button">
+      <a href="./education/" class="button">
         View tools
       </a>
     </div>
 
-    <!-- CATEGORY: COMMERCE -->
+    <!-- CATEGORY: COMMERCE / VISUAL -->
     <div class="card">
       <h3>Commerce & Product Visuals</h3>
       <p>
-        Tools untuk UMKM, seller, dan kreator produk agar visual
-        terlihat profesional, estetik, dan siap jual tanpa photoshoot fisik.
+        Tools untuk UMKM, seller, dan brand agar visual produk terlihat
+        profesional, estetik, dan siap jual tanpa photoshoot fisik.
       </p>
-      <a href="product-visuals.html" class="button">
+      <a href="./product-visuals/" class="button">
         View tools
       </a>
     </div>
 
-    <!-- CATEGORY: STYLING -->
+    <!-- CATEGORY: PERSONAL STYLING -->
     <div class="card">
       <h3>Personal Styling Tools</h3>
       <p>
         Eksperimen AI untuk personal appearance seperti outfit,
         gaya rambut, dan hijab secara virtual.
       </p>
-      <a href="styling-tools.html" class="button">
+      <a href="./styling/" class="button">
         View tools
       </a>
     </div>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (FETCHED) -->
   <div id="footer"></div>
 
-  <!-- LOAD HEADER & FOOTER -->
+  <!-- FETCH HEADER & FOOTER -->
   <script>
-    fetch('header.html')
+    fetch('./header.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('header').innerHTML = html;
       });
 
-    fetch('footer.html')
+    fetch('./footer.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('footer').innerHTML = html;
