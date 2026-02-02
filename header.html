@@ -1,37 +1,13 @@
 <header>
   <div class="header-inner">
     <div class="nav-left">
-      <a id="nav-back">← Back</a>
-      <a id="nav-home">Home</a>
+      <button id="btn-back" type="button">← Back</button>
+      <a href="/aitheria/">Home</a>
+      <a href="/aitheria/">Tools</a>
     </div>
 
-    <nav class="nav">
-      <a id="nav-tools">Tools</a>
-      <a href="https://lynk.id" class="primary">Akses</a>
-    </nav>
+    <div class="nav-right">
+      <a href="https://lynk.id">Akses</a>
+    </div>
   </div>
 </header>
-
-<script>
-(function(){
-  const origin = window.location.origin;
-  const parts = window.location.pathname.split('/').filter(Boolean);
-  const project = parts[0];
-
-  function goHome(){
-    window.location.href = origin + '/' + project + '/';
-  }
-
-  function goBack(){
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      goHome();
-    }
-  }
-
-  document.getElementById('nav-home')?.addEventListener('click', goHome);
-  document.getElementById('nav-tools')?.addEventListener('click', goHome);
-  document.getElementById('nav-back')?.addEventListener('click', goBack);
-})();
-</script>
