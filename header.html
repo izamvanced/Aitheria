@@ -219,12 +219,12 @@ footer{
     <!-- LEFT -->
     <div class="nav-left">
       <a href="#" onclick="goBack(event)">← Back</a>
-      <a href="/">Home</a>
+      <a href="#" onclick="goHome(event)">Home</a>
     </div>
 
     <!-- RIGHT -->
     <nav class="nav">
-      <a href="/#tools">Tools</a>
+      <a href="#" onclick="goHome(event)">Tools</a>
       <a href="https://lynk.id" class="primary">Akses</a>
     </nav>
 
@@ -237,7 +237,32 @@ function goBack(e){
   if (window.history.length > 1) {
     window.history.back();
   } else {
-    window.location.href = '/';
+    goHome(e);
   }
+}
+
+function goHome(e){
+  e.preventDefault();
+
+  // Path saat ini, contoh:
+  // /aitheria/index.html
+  // /aitheria/education/index.html
+  const path = window.location.pathname;
+
+  // Pecah dan bersihkan
+  const parts = path.split('/').filter(Boolean);
+
+  // Hitung kedalaman file
+  // parts terakhir diasumsikan file html
+  const depth = parts.length - 1;
+
+  // Bangun path naik ke root project
+  let up = '';
+  for (let i = 0; i < depth; i++) {
+    up += '../';
+  }
+
+  // Arahkan ke homepage
+  window.location.href = up + 'index.html';
 }
 </script>
