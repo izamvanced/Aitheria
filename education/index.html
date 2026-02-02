@@ -1,1 +1,72 @@
-educstio
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education Tools — Aitheria</title>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- PAGE TITLE -->
+    <h1>
+      Education <span class="accent">Tools</span>
+    </h1>
+
+    <p class="tagline">
+      Tools AI untuk edukasi, pembelajaran, dan konten berbasis visual.
+    </p>
+
+    <!-- TOOL 1 -->
+    <div class="card">
+      <h3>EduPrompt Studio</h3>
+      <p>
+        Tool untuk membuat soal, cerita, dan materi pembelajaran anak
+        menggunakan AI dengan pendekatan narasi visual dan kartun.
+        Cocok untuk guru, orang tua, dan kreator edukasi.
+      </p>
+      <a href="#" class="button">
+        Open tool
+      </a>
+    </div>
+
+    <!-- TOOL 2 (placeholder future) -->
+    <div class="card">
+      <h3>Visual Learning Generator</h3>
+      <p>
+        Eksperimen AI untuk mengubah konsep pelajaran menjadi visual
+        yang mudah dipahami, seperti infografik, ilustrasi, dan diagram.
+      </p>
+      <a href="#" class="button secondary">
+        Coming soon
+      </a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- LOAD HEADER & FOOTER -->
+  <script>
+    fetch('../header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      });
+
+    fetch('../footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+      });
+  </script>
+
+</body>
+</html>
