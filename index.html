@@ -1,93 +1,113 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AITHERIA — Tools Platform</title>
 
-  <!-- GLOBAL CSS -->
   <link rel="stylesheet" href="./styles.css"/>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <div id="header"></div>
+<!-- HEADER -->
+<div id="header"></div>
 
-  <!-- MAIN -->
-  <main class="container">
 
-    <!-- HERO -->
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+
     <h1 class="hero-title">
       AITHERIA <span class="accent">Tools</span>
     </h1>
 
-    <p class="tagline">
+    <p class="hero-tagline">
       Platform AI tools untuk edukasi, visual produk, dan eksperimen kreatif.
     </p>
 
-    <!-- EDUCATION -->
+  </section>
+
+
+  <!-- CONTENT -->
+  <section class="container">
+
     <div class="card">
       <h3>Education Tools</h3>
+
       <p>
-        Tools AI untuk membuat soal, materi belajar, dan konten edukatif
-        berbasis narasi dan visual.
+        Tools AI untuk membuat soal, materi belajar,
+        dan konten edukatif berbasis narasi dan visual.
       </p>
+
       <a href="./education/" class="button">
         Lihat tools
       </a>
     </div>
 
-    <!-- PRODUCT -->
+
     <div class="card">
       <h3>Product & Visual Tools</h3>
+
       <p>
         Tools untuk UMKM dan brand agar visual produk terlihat profesional
         tanpa photoshoot fisik.
       </p>
+
       <a href="./product-visuals/" class="button">
         Lihat tools
       </a>
     </div>
 
-    <!-- STYLING -->
+
     <div class="card">
       <h3>Personal Styling Tools</h3>
+
       <p>
-        Eksperimen AI untuk outfit, gaya rambut, dan hijab secara virtual.
+        Eksperimen AI untuk outfit, gaya rambut,
+        dan hijab secara virtual.
       </p>
+
       <a href="./styling/" class="button">
         Lihat tools
       </a>
     </div>
 
-  </main>
+  </section>
 
-  <!-- FOOTER -->
-  <div id="footer"></div>
+</main>
 
-  <!-- LOAD HEADER + FOOTER -->
-  <script>
 
-    fetch('./header.html')
-      .then(res=>res.text())
-      .then(html=>{
-        document.getElementById('header').innerHTML=html;
+<!-- FOOTER -->
+<div id="footer"></div>
 
-        // BACK BUTTON
-        const btn=document.getElementById("btn-back");
-        if(btn){
-          btn.onclick=()=>history.back();
-        }
-      });
 
-    fetch('./footer.html')
-      .then(res=>res.text())
-      .then(html=>{
-        document.getElementById('footer').innerHTML=html;
-      });
 
-  </script>
+<!-- LOAD HEADER FOOTER -->
+<script>
+
+fetch('./header.html')
+  .then(res=>res.text())
+  .then(data=>{
+    document.getElementById('header').innerHTML=data;
+  });
+
+fetch('./footer.html')
+  .then(res=>res.text())
+  .then(data=>{
+    document.getElementById('footer').innerHTML=data;
+  });
+
+
+// BACK BUTTON
+document.addEventListener("click",function(e){
+  if(e.target.id==="btn-back"){
+    history.back();
+  }
+});
+
+</script>
 
 </body>
 </html>
