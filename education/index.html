@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Education Tools — Aitheria</title>
+  <title>Education Tools — AITHERIA</title>
 
-  <!-- CSS: NAIK 1 FOLDER -->
+  <!-- GLOBAL CSS (NAIK 1 FOLDER) -->
   <link rel="stylesheet" href="../styles.css" />
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (SUBFOLDER) -->
   <div id="header"></div>
 
   <!-- MAIN CONTENT -->
@@ -20,61 +20,67 @@
     <h1>Education Tools</h1>
 
     <p class="tagline">
-      Tools AI untuk pendidikan, pembelajaran, dan konten edukatif.
+      Kumpulan tools AI untuk pendidikan, pembelajaran kreatif,
+      dan pembuatan konten edukatif berbasis visual.
     </p>
 
+    <!-- TOOL 1 -->
     <div class="card">
       <h3>EduPrompt Studio</h3>
       <p>
-        Membuat soal dan materi belajar anak dengan bantuan AI
-        berbasis visual dan narasi.
+        Tool AI untuk membantu guru dan orang tua membuat soal,
+        latihan, dan materi belajar anak dengan narasi visual
+        dan pendekatan kreatif.
       </p>
-      <a href="#" class="button">Buka tools</a>
+      <a href="#" class="button">
+        Buka tools
+      </a>
     </div>
 
+    <!-- TOOL 2 -->
     <div class="card">
       <h3>Visual Learning Generator</h3>
       <p>
-        Generator visual pembelajaran untuk infografik dan ilustrasi.
+        Generator visual pembelajaran untuk membuat ilustrasi,
+        infografik, dan konten belajar yang lebih mudah dipahami.
       </p>
-      <a href="#" class="button secondary">Coming soon</a>
+      <a href="#" class="button secondary">
+        Coming soon
+      </a>
+    </div>
+
+    <!-- TOOL 3 -->
+    <div class="card">
+      <h3>Story-Based Learning</h3>
+      <p>
+        Membuat cerita pembelajaran berbasis karakter dan narasi
+        agar anak lebih tertarik dan fokus belajar.
+      </p>
+      <a href="#" class="button secondary">
+        Coming soon
+      </a>
     </div>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (GLOBAL) -->
   <div id="footer"></div>
 
-  <!-- FETCH HEADER & FOOTER + BACK BUTTON -->
+  <!-- LOAD HEADER & FOOTER -->
   <script>
-    // HEADER
-    fetch('../partials/header.html')
+    // header SUBFOLDER
+    fetch('../header-sub.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('header').innerHTML = html;
-        bindBackButton();
       });
 
-    // FOOTER
-    fetch('../partials/footer.html')
+    // footer GLOBAL
+    fetch('../footer.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('footer').innerHTML = html;
       });
-
-    // BACK BUTTON LOGIC
-    function bindBackButton(){
-      const backBtn = document.getElementById('btn-back');
-      if (!backBtn) return;
-
-      backBtn.onclick = () => {
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          window.location.href = '/aitheria/';
-        }
-      };
-    }
   </script>
 
 </body>
