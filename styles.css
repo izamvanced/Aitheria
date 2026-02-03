@@ -1,5 +1,5 @@
 /* =====================================
-   AITHERIA — MASTER CSS (FINAL LOCK)
+   AITHERIA MASTER CSS — HERO LOCK VERSION
    ===================================== */
 
 :root{
@@ -36,39 +36,39 @@ body{
   padding:32px 20px;
 }
 
-/* =====================
-   HERO (LOCK — JANGAN SENTUH)
-   ===================== */
+/* =====================================
+   🔥 HERO — SACRED (JANGAN SENTUH)
+   ===================================== */
 
 .hero-title{
-  font-size:52px;
+  font-size:56px;
   font-weight:800;
-  letter-spacing:-1px;
-  line-height:1.1;
-  margin-bottom:12px;
+  letter-spacing:-1.2px;
+  line-height:1.05;
+  margin-bottom:14px;
 }
 
+/* HERO ACCENT */
+.hero-title span{
+  background:linear-gradient(90deg,#ff8a1f,#ffb067);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* TAGLINE */
 .tagline{
   color:var(--muted);
   max-width:720px;
-  margin-bottom:28px;
+  margin-bottom:30px;
   font-size:18px;
 }
 
 /* MOBILE HERO */
 @media(max-width:640px){
   .hero-title{
-    font-size:34px;
+    font-size:36px;
+    line-height:1.1;
   }
-}
-
-/* =====================
-   SECTION HEADING
-   (bukan hero)
-   ===================== */
-
-h3{
-  margin-top:0;
 }
 
 /* =====================
@@ -84,7 +84,6 @@ h3{
   transition:.25s;
 }
 
-/* subtle modern hover */
 .card:hover{
   transform:translateY(-4px);
   box-shadow:0 20px 40px rgba(0,0,0,.08);
@@ -123,17 +122,13 @@ h3{
   display:block;
 }
 
-/* mobile hero image */
 @media(max-width:640px){
   .hero-image img{
     max-height:320px;
   }
 }
 
-/* =====================
-   SAFE IMAGE RULE
-   (anti overflow HP)
-   ===================== */
+/* SAFE IMAGE RULE */
 
 .card img{
   max-width:100%;
@@ -141,7 +136,7 @@ h3{
 }
 
 /* =====================
-   HEADER NAV (FIX STYLE)
+   HEADER
    ===================== */
 
 header{
@@ -173,7 +168,7 @@ header{
 }
 
 /* =====================
-   FOOTER (LOCK)
+   FOOTER
    ===================== */
 
 footer{
